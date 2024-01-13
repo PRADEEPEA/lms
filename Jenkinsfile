@@ -8,9 +8,10 @@ pipeline {
 		sh 'cd webapp && sudo docker container run --rm -e SONAR_HOST_URL="http://18.217.140.118:9000" -e SONAR_LOGIN="sqp_5a374423f9a6937d9d3913b8d392248f94e4a6da" -v ".:/usr/src" sonarsource/sonar-scanner-cli -Dsonar.projectKey=lms'
             }
         }
-        stage('Test') {
+        stage('Build') {
             steps {
-                echo 'Testing..'
+                echo 'Building..'
+		sh 'cd webapp && npm install && npm run build'
             }
         }
         stage('Deploy') {
