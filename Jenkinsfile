@@ -5,9 +5,8 @@ pipeline {
         stage('Sonar Analysis') {
             steps {
                 echo 'Analyze Code..'
-
-
-        }
+       
+       }
         stage('Build') {
             steps {
                 echo 'Building..'
