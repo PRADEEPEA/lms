@@ -1,12 +1,15 @@
 pipeline {
     agent any
 
-    stages {
+
+       stages {
         stage('Sonar Analysis') {
             steps {
                 echo 'Analyze Code..'
-       
-       }
+
+            }
+
+
         stage('Build') {
             steps {
                 echo 'Building..'
@@ -25,10 +28,11 @@ pipeline {
 		    sh "zip webapp/dist-${packageJSONVersion}.zip -r webapp/dist"
 		    sh "curl -v -u admin:pradeep123 --upload-file webapp/dist-${packageJSONVersion}.zip http://3.23.88.99:8081/repository/lms/"
             }
+            }
 	}    
 
 
-        stage('Deploy') {
+         stage('Deploy') {
             steps {
                 echo 'Deploying....'
             }
