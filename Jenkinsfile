@@ -14,6 +14,7 @@ pipeline {
             }
         }
 
+
 	 stage('Release LMS') {
 	    steps {
 	        script {
@@ -22,9 +23,10 @@ pipeline {
 		    def packageJSONVersion = packageJSON.version
 		    echo "${packageJSONVersion}"
 		    sh "zip webapp/dist-${packageJSONVersion}.zip -r webapp/dist"
-		    sh "curl -v -u admin:pradeep123 --upload-file webapp/dist-${packageJSONVersion}.zip http://3.19.67.247:8081/repository/lms/"
+		    sh "curl -v -u admin:pradeep123 --upload-file webapp/dist-${packageJSONVersion}.zip http://3.23.88.99:8081/repository/lms/"
             }
 	}    
+
 
         stage('Deploy') {
             steps {
