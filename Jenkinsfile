@@ -31,6 +31,7 @@ pipeline {
 		    sh 'sudo rm -rf /var/www/html/*'
 		    sh "sudo unzip -o dist-'${packageJSONVersion}'.zip"
 		    sh "sudo cp -r webapp/dist/* var/www/html"
+                    }		    
 
             }
         }
