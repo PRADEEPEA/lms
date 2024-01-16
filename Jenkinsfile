@@ -32,7 +32,7 @@ pipeline {
 		    sh "sudo unzip -o dist-'${packageJSONVersion}'.zip"
 		    sh "sudo cp -r webapp/dist/* var/www/html"
                   
-            I[I}		    
+            }		    
 
             }
         }
